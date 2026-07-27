@@ -637,11 +637,17 @@
             </effect_group> 
 
 	 
-			<!-- REDUCE NPC DAMAGE TO PLAYER -->
+			<!-- REDUCE RANGED NPC DAMAGE TO PLAYER -->
 			<effect_group name="ReduceDamageToPlayers">
 				<requirement name="EntityTagCompare" target="other" tags="player"/>
-				<requirement name="HoldingItemHasTags" tags="ranged,melee"/>
-				<passive_effect name="DamageModifier" operation="perc_add" value="-1.0"/>
+				<requirement name="HoldingItemHasTags" tags="ranged"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.9"/>
+			</effect_group>
+			<!-- REDUCE MELEE NPC DAMAGE TO PLAYER -->
+			<effect_group name="ReduceDamageToPlayers">
+				<requirement name="EntityTagCompare" target="other" tags="player"/>
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="-.33"/>
 			</effect_group>
 			
 			<!-- Add Damage Resistance -->
